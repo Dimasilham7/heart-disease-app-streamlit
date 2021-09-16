@@ -63,7 +63,7 @@ for col in encode:
     dummy = pd.get_dummies(df[col], prefix=col)
     df = pd.concat([df,dummy], axis=1)
     del df[col]
-df = df[:2] # Selects only the first row (the user input data)
+df = df[:1] # Selects only the first row (the user input data)
 
 # Displays the user input features
 st.subheader('Fitur yang diinput user')
@@ -71,7 +71,7 @@ st.subheader('Fitur yang diinput user')
 if uploaded_file is not None:
     st.write(df)
 else:
-    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
+    st.write('File CSV yang terupload. dibawah adalah contoh parameter yang ditampilkan.')
     st.write(df)
 
 # Reads in saved classification model
